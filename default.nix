@@ -42,5 +42,9 @@ in
       system = "aarch64-linux";
       configuration = (fromPkgs "nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix");
     }).config.system.build.sdImage;
+    rootfs = (buildConfig {
+      system = "aarch64-linux";
+      configuration = (fromPkgs "nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix");
+    }).config.system.build.toplevel;
   };
 }
